@@ -1,0 +1,63 @@
+@import "../../../../assets/styles/variables";
+
+
+.header {
+  padding: 40px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .header-content {
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+
+      .header-menu {
+        margin-left: 100px;
+        margin-right: 227px;
+
+        nav ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+
+          li {
+            margin-right: 30px;
+            list-style: none;
+            color: $dark-blue-text-color;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .header-phone {
+        color: $blue-text-color;
+        text-decoration: none;
+        margin-right: 143px;
+      }
+
+      .header-action {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
