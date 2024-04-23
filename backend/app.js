@@ -1,18 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const categoryRoutes = require('./src/routes/category.routes');
-const typeRoutes = require('./src/routes/type.routes');
-const productRoutes = require('./src/routes/product.routes');
-const cartRoutes = require('./src/routes/cart.routes');
+const articleRoutes = require('./src/routes/article.routes');
+const requestRoutes = require('./src/routes/request.routes');
+const commentRoutes = require('./src/routes/comment.routes');
 const authRoutes = require('./src/routes/auth.routes');
-const favoriteRoutes = require('./src/routes/favorite.routes');
-const orderRoutes = require('./src/routes/order.routes');
 const userRoutes = require('./src/routes/user.routes');
 const MongoDBConnection = require("./src/utils/common/connection");
 const config = require("./src/config/config");
-const session = require('express-session');
 const path = require('path');
-const {v4: uuidv4} = require('uuid');
 const passport = require('passport');
 const UserModel = require("./src/models/user.model");
 const JwtStrategy = require('passport-jwt').Strategy,
@@ -27,19 +23,10 @@ MongoDBConnection.getConnection((error, connection) => {
 
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(express.json());
-    app.use(cors({credentials: true, origin: true}));
-
-    app.use(session({
-        genid: function (req) {
-            return uuidv4();
-        },
-        secret: '0SddfAS9fAdFASASSFwdVCXLZJKHfss',
-        resave: false,
-        saveUninitialized: true,
-    }));
+    app.use(cors());
 
     passport.use(new JwtStrategy({
-        jwtFromRequest: ExtractJwt.fromHeader('x-access-token'),
+        jwtFromRequest: ExtractJwt.fromHeader('x-auth'),
         secretOrKey: config.secret,
         algorithms: ["HS256"],
     }, async (payload, next) => {
@@ -56,7 +43,10 @@ MongoDBConnection.getConnection((error, connection) => {
         }
 
         if (user) {
-            return  next(null, payload);
+            if (!user.refreshToken) {
+                return next(new Error('Ошибка авторизации'));
+            }
+            return next(null, payload);
         }
 
         next(new Error('Пользователь не найден'));
@@ -66,12 +56,10 @@ MongoDBConnection.getConnection((error, connection) => {
 
     app.use("/api", authRoutes);
     app.use("/api/categories", categoryRoutes);
-    app.use("/api/types", typeRoutes);
-    app.use("/api/products", productRoutes);
-    app.use("/api/cart", cartRoutes);
-    app.use("/api/favorites", favoriteRoutes);
-    app.use("/api/orders", orderRoutes);
-    app.use("/api/user", userRoutes);
+    app.use("/api/articles", articleRoutes);
+    app.use("/api/requests", requestRoutes);
+    app.use("/api/comments", commentRoutes);
+    app.use("/api/users", userRoutes);
 
     app.use(function (req, res, next) {
         const err = new Error('Not Found');
@@ -80,7 +68,7 @@ MongoDBConnection.getConnection((error, connection) => {
     });
 
     app.use(function (err, req, res, next) {
-        res.status(err.statusCode || 500).send({error: true, message: err.message});
+        res.status(err.statusCode || err.status || 500).send({error: true, message: err.message});
     });
 
     app.listen(config.port, () =>

@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.btn {
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background: rgb(112, 159, 220);
+  border: none;
+}
