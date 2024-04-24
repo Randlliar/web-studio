@@ -1,3 +1,5 @@
+@import "variables";
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,9 +10,31 @@ html, body {
   margin: 0 auto;
 }
 
+input {
+  box-sizing: border-box;
+  border: 2px solid $blue-text-color;
+  border-radius: 3px;
+  padding: 20px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $blue-text-color;
+}
+
 .btn {
   color: rgb(255, 255, 255);
   border-radius: 5px;
-  background: rgb(112, 159, 220);
+  background: $blue-text-color;
   border: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
 }

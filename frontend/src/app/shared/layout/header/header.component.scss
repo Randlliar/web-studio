@@ -51,11 +51,19 @@
       }
 
       .header-action {
-        display: flex;
-        align-items: center;
+        color: $dark-blue-text-color;
 
-        span {
-          margin-left: 8px;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: $dark-blue-text-color;
+          cursor: pointer;
+
+          span {
+            margin-left: 8px;
+          }
         }
       }
     }
