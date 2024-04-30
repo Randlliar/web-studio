@@ -5,13 +5,14 @@ import {AppComponent} from './app.component';
 import {LayoutComponent} from './shared/layout/layout.component';
 import {HeaderComponent} from './shared/layout/header/header.component';
 import {FooterComponent} from './shared/layout/footer/footer.component';
-import {MainComponent} from './views/main/main.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 import {HttpClientModule} from "@angular/common/http";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {MatMenuModule} from "@angular/material/menu";
+import {MainComponent} from "./views/main/main.component";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import {MatMenuModule} from "@angular/material/menu";
     CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDialogModule
+
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

@@ -1,10 +1,10 @@
 import {Component, ElementRef, OnInit, TemplateRef, ViewChild,} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
-import {ArticleService} from "../../../shared/services/article.service";
-import {PopularArticlesType} from "../../../../types/popular-articles.type";
-import {environment} from "../../../../environments/environment";
-import {CategoriesService} from "../../../shared/services/categories.service";
-import {CategoriesType} from "../../../../types/categories.type";
+import {ArticleService} from "../../shared/services/article.service";
+import {PopularArticlesType} from "../../../types/popular-articles.type";
+import {environment} from "../../../environments/environment";
+import {CategoriesService} from "../../shared/services/categories.service";
+import {CategoriesType} from "../../../types/categories.type";
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";
@@ -81,7 +81,7 @@ export class MainComponent implements OnInit {
 
   constructor(private articleService: ArticleService,
               private categoriesService: CategoriesService,
-              // private router: Router,
+              private router: Router,
               private dialog: MatDialog
               ) { }
 
@@ -100,15 +100,15 @@ export class MainComponent implements OnInit {
 //Вернуться в проект im в ордер компонетнт посмотреть реализацию модалки и передачи в гет запрос параметров
 
   getOrder() {
-    // this.dialogRef = this.dialog.open(this.popup);
-    // this.dialogRef.backdropClick()
-    //   .subscribe(() => {
-    //     this.router.navigate(['/']);
-    //   });
+    this.dialogRef = this.dialog.open(this.popup);
+    this.dialogRef.backdropClick()
+      .subscribe(() => {
+        this.router.navigate(['/']);
+      });
   }
 
   closePopup() {
-    // this.dialogRef?.close();
-    // this.router.navigate(['/']);
+    this.dialogRef?.close();
+    this.router.navigate(['/']);
   }
 }
