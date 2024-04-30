@@ -10,7 +10,6 @@ import {LoginComponent} from "./login/login.component";
   declarations: [
     SignupComponent,
     LoginComponent
-
   ],
   imports: [
     CommonModule,

@@ -6,10 +6,12 @@ import {LayoutComponent} from './shared/layout/layout.component';
 import {HeaderComponent} from './shared/layout/header/header.component';
 import {FooterComponent} from './shared/layout/footer/footer.component';
 import {MainComponent} from './views/main/main.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 import {HttpClientModule} from "@angular/common/http";
+import {CarouselModule} from "ngx-owl-carousel-o";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -21,11 +23,14 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatSnackBarModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    MatSnackBarModule,
+    FormsModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    CarouselModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
