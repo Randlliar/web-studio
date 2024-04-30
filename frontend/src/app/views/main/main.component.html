@@ -44,7 +44,7 @@
         <div class="main-banner">
           <div class="main-banner-circle"></div>
           <div class="main-banner-image">
-            <img src="../../../assets/images/main/banner_1.png" alt="">
+            <img src="../../../../assets/images/main/banner_1.png" alt="">
           </div>
           <div class="main-banner-text">
             <div class="main-banner-text-title">Предложение месяца</div>
@@ -57,7 +57,7 @@
         <div class="main-banner">
           <div class="main-banner-circle"></div>
           <div class="main-banner-image">
-            <img src="../../../assets/images/main/banner_2.png" alt="">
+            <img src="../../../../assets/images/main/banner_2.png" alt="">
           </div>
           <div class="main-banner-text">
             <div class="main-banner-text-title">Акция</div>
@@ -71,7 +71,7 @@
         <div class="main-banner">
           <div class="main-banner-circle"></div>
           <div class="main-banner-image">
-            <img src="../../../assets/images/main/banner_3.png" alt="">
+            <img src="../../../../assets/images/main/banner_3.png" alt="">
           </div>
           <div class="main-banner-text">
             <div class="main-banner-text-title">Новость дня</div>
@@ -95,7 +95,7 @@
     <div class="services-cards">
       <div class="services-card">
         <div class="services-card-image">
-          <img src="../../../assets/images/main/service_1.png" alt="">
+          <img src="../../../../assets/images/main/service_1.png" alt="">
         </div>
         <div class="services-card-title">Создание сайтов</div>
         <div class="services-card-description">В краткие сроки мы создадим качественный и самое главное продающий сайт
@@ -108,7 +108,7 @@
       </div>
       <div class="services-card">
         <div class="services-card-image">
-          <img src="../../../assets/images/main/service_2.png" alt="">
+          <img src="../../../../assets/images/main/service_2.png" alt="">
         </div>
         <div class="services-card-title">Продвижение</div>
         <div class="services-card-description">Вам нужен качественный SMM-специалист или грамотный таргетолог? Мы готовы
@@ -121,7 +121,7 @@
       </div>
       <div class="services-card">
         <div class="services-card-image">
-          <img src="../../../assets/images/main/service_3.png" alt="">
+          <img src="../../../../assets/images/main/service_3.png" alt="">
         </div>
         <div class="services-card-title">Реклама</div>
         <div class="services-card-description">Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к
@@ -134,7 +134,7 @@
       </div>
       <div class="services-card">
         <div class="services-card-image">
-          <img src="../../../assets/images/main/service_4.png" alt="">
+          <img src="../../../../assets/images/main/service_4.png" alt="">
         </div>
         <div class="services-card-title">Копирайтинг</div>
         <div class="services-card-description">Наши копирайтеры готовы написать Вам любые продающие текста, которые не
@@ -155,7 +155,7 @@
 <section class="about">
   <div class="container">
     <div class="about-image">
-      <img src="../../../assets/images/main/about.png" alt="about">
+      <img src="../../../../assets/images/main/about.png" alt="about">
     </div>
     <div class="about-content">
       <div class="about-content-title">Кто мы и чем мы занимаемся?</div>
@@ -328,3 +328,20 @@
 </section>
 
 </div>
+
+<ng-template #popup>
+  <div class="order-popup">
+    <div class="order-popup-close" (click)="closePopup()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+        <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="order-popup-title">Благодарим за заказ!</div>
+    <div class="order-popup-content">
+      <div>Ваш заказ оформлен.</div>
+      <div>Вся информация о заказе была выслана вам на почту.</div>
+      <div>Курьер свяжется с вами за два часа до доставки товара.</div>
+    </div>
+  </div>
+</ng-template>

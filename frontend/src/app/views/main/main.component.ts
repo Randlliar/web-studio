@@ -1,11 +1,12 @@
-import {Component, OnInit, } from '@angular/core';
+import {Component, ElementRef, OnInit, TemplateRef, ViewChild,} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
-import {ArticleService} from "../../shared/services/article.service";
-import {PopularArticlesType} from "../../../types/popular-articles.type";
-import {environment} from "../../../environments/environment";
-import {CategoriesService} from "../../shared/services/categories.service";
-import {CategoriesType} from "../../../types/categories.type";
+import {ArticleService} from "../../../shared/services/article.service";
+import {PopularArticlesType} from "../../../../types/popular-articles.type";
+import {environment} from "../../../../environments/environment";
+import {CategoriesService} from "../../../shared/services/categories.service";
+import {CategoriesType} from "../../../../types/categories.type";
 import {Router} from "@angular/router";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
@@ -72,17 +73,16 @@ export class MainComponent implements OnInit {
     },
   ];
 
-
+  @ViewChild('popup') popup!: TemplateRef<ElementRef>;
   articles: PopularArticlesType[] = [];
   categories: CategoriesType[] = [];
   serverStaticPath = environment.serverStaticPath;
-  // dialogRef: MatDialogRef<any> | null = null;
-  // @ViewChild('popup') popup!: TemplateRef<ElementRef>;
+  dialogRef: MatDialogRef<any> | null = null;
 
   constructor(private articleService: ArticleService,
               private categoriesService: CategoriesService,
-              private router: Router,
-              // public dialog: MatDialog
+              // private router: Router,
+              private dialog: MatDialog
               ) { }
 
   ngOnInit(): void {
