@@ -8,11 +8,12 @@ import {FooterComponent} from './shared/layout/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {MatMenuModule} from "@angular/material/menu";
 import {MainComponent} from "./views/main/main.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {AuthInterceptor} from "./core/auth/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -33,10 +34,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule
-
   ],
   providers: [
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

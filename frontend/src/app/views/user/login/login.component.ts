@@ -6,6 +6,8 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import {mergeMap} from "rxjs";
+import {UserInfoType} from "../../../../types/user-info.type";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +25,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private _snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              ) {
   }
 
   ngOnInit(): void {
@@ -32,8 +35,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     if (this.loginForm.valid && this.loginForm.value.email && this.loginForm.value.password) {
       this.authService.login(this.loginForm.value.email, this.loginForm.value.password, !!this.loginForm.value.rememberMe)
-        .subscribe({
-          next: (data: LoginResponseType | DefaultResponseType) => {
+        .pipe(
+          mergeMap((data: LoginResponseType | DefaultResponseType) => {
             let error = null;
             if ((data as DefaultResponseType).error !== undefined) {
               error = (data as DefaultResponseType).message
@@ -53,10 +56,15 @@ export class LoginComponent implements OnInit {
             this.authService.setTokens(loginResponse.accessToken, loginResponse.refreshToken);
             this.authService.userId = loginResponse.userId;
 
+            return this.authService.getUser();
+
+          })
+        )
+        .subscribe({
+          next: (user: UserInfoType) => {
+            this.authService.user$.next(user);
             this._snackBar.open('Вы успешно авторизовались');
-            this.router.navigate(['/'])
-
-
+            this.router.navigate(['/']);
           },
           error: (errorResponse: HttpErrorResponse) => {
             if (errorResponse.error && errorResponse.error.message) {

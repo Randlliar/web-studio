@@ -7,6 +7,7 @@ import {CategoriesService} from "../../shared/services/categories.service";
 import {CategoriesType} from "../../../types/categories.type";
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {ArticleType} from "../../../types/article.type";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
@@ -96,6 +97,7 @@ export class MainComponent implements OnInit {
       .subscribe((data: PopularArticlesType[]) => {
         this.articles = data;
       })
+
   }
 //Вернуться в проект im в ордер компонетнт посмотреть реализацию модалки и передачи в гет запрос параметров
 
@@ -105,6 +107,10 @@ export class MainComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate(['/']);
       });
+  }
+
+  getRequest() {
+
   }
 
   closePopup() {

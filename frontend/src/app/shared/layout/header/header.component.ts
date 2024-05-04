@@ -4,6 +4,8 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {UserInfoService} from "../../services/user-info.service";
+import {Observable} from "rxjs";
+import {UserInfoType} from "../../../../types/user-info.type";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,7 @@ import {UserInfoService} from "../../services/user-info.service";
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
-
+user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
   constructor(private authService: AuthService,
               private _snackBar: MatSnackBar,
               private router: Router,

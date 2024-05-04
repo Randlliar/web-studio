@@ -1,16 +1,4 @@
 <div class="container">
-<!--  <div class="modal">-->
-<!--    <div class="modal-title">Заявка на услугу</div>-->
-<!--    <select type="text" placeholder="Тип..." class="input-category" id="category-type">-->
-<!--      <option value="{{category.url}}" *ngFor="let category of categories">{{ category.name }}</option>-->
-<!--    </select>-->
-<!---->
-<!---->
-<!--    <input class="modal-input" placeholder="Ваше имя">-->
-<!--    <input class="modal-input" placeholder="Ваш номер телефона">-->
-<!--    <button class="btn" (click)="getOrder()">Оставить заявку</button>-->
-<!--  </div>-->
-
 <section class="main">
   <div class="container">
     <a class="move-backward" (click)="owlCar.prev()">
@@ -116,7 +104,7 @@
         </div>
         <div class="services-card-about">
           <div class="services-card-about-price">От 3 500₽</div>
-          <button class="btn">Подробнее</button>
+          <button class="btn" (click)="getOrder()">Подробнее</button>
         </div>
       </div>
       <div class="services-card">
@@ -129,7 +117,7 @@
         </div>
         <div class="services-card-about">
           <div class="services-card-about-price">От 1 000₽</div>
-          <button class="btn">Подробнее</button>
+          <button class="btn" (click)="getOrder()">Подробнее</button>
         </div>
       </div>
       <div class="services-card">
@@ -142,7 +130,7 @@
         </div>
         <div class="services-card-about">
           <div class="services-card-about-price">От 750₽</div>
-          <button class="btn">Подробнее</button>
+          <button class="btn" (click)="getOrder()">Подробнее</button>
         </div>
       </div>
 
@@ -222,9 +210,10 @@
     <div class="blog-title">Популярные статьи из блога</div>
     <div class="blog-cards">
       <div class="blog-card" *ngFor="let article of articles">
-        <div class="blog-card-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
+        <div> <div class="blog-card-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
          <div class="blog-card-title">{{ article.title }}</div>
          <div class="blog-card-description">{{ article.description }}</div>
+        </div>
          <a class="blog-card-more">Читать дальше</a>
       </div>
 
@@ -341,10 +330,9 @@
     <select type="text" placeholder="Тип..." class="input-category" id="category-type">
       <option value="{{category.url}}" *ngFor="let category of categories">{{ category.name }}</option>
     </select>
-
-
     <input class="modal-input" placeholder="Ваше имя">
     <input class="modal-input" placeholder="Ваш номер телефона">
-    <button class="btn" (click)="getOrder()">Оставить заявку</button>
+    <button class="btn" (click)="getRequest()">Оставить заявку</button>
   </div>
 </ng-template>
+св

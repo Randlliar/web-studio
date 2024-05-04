@@ -279,7 +279,10 @@
       .blog-card {
         margin-right: 25px;
         width: 291px;
-        height: 600px;
+        //height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
 
         .blog-card-image {
@@ -313,6 +316,8 @@
           border-bottom: 1px solid $blue-text-color;
           text-decoration: none;
           cursor: pointer;
+          margin-top: 20px;
+          width: 124px;
         }
       }
     }
