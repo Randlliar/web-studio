@@ -327,12 +327,14 @@
       </svg>
     </div>
     <div class="modal-title">Заявка на услугу</div>
-    <select type="text" placeholder="Тип..." class="input-category" id="category-type">
-      <option value="{{category.url}}" *ngFor="let category of categories">{{ category.name }}</option>
-    </select>
-    <input class="modal-input" placeholder="Ваше имя">
-    <input class="modal-input" placeholder="Ваш номер телефона">
-    <button class="btn" (click)="getRequest()">Оставить заявку</button>
+    <form [formGroup]="form" (submit)="getRequest()">
+      <select type="text" placeholder="Тип..." class="input-category" id="category-type" formControlName="service">
+        <option value="{{category.url}}" *ngFor="let category of categories">{{ category.name }}</option>
+      </select>
+      <input class="modal-input" placeholder="Ваше имя" formControlName="name">
+      <input class="modal-input" placeholder="Ваш номер телефона" formControlName="phone">
+      <button class="btn" type="submit">Оставить заявку</button>
+    </form>
   </div>
 </ng-template>
-св
+

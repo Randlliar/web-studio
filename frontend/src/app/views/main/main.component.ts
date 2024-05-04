@@ -8,6 +8,8 @@ import {CategoriesType} from "../../../types/categories.type";
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ArticleType} from "../../../types/article.type";
+import {FormControl, FormGroup} from "@angular/forms";
+import {RequestService} from "../../shared/services/request.service";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
@@ -79,11 +81,18 @@ export class MainComponent implements OnInit {
   categories: CategoriesType[] = [];
   serverStaticPath = environment.serverStaticPath;
   dialogRef: MatDialogRef<any> | null = null;
+  form = new FormGroup({
+    name: new FormControl(),
+    phone: new FormControl(),
+    service: new FormControl(),
+    type: new FormControl(),
+  })
 
   constructor(private articleService: ArticleService,
               private categoriesService: CategoriesService,
               private router: Router,
-              private dialog: MatDialog
+              private dialog: MatDialog,
+              private requestService: RequestService
               ) { }
 
   ngOnInit(): void {
@@ -102,15 +111,13 @@ export class MainComponent implements OnInit {
 //Вернуться в проект im в ордер компонетнт посмотреть реализацию модалки и передачи в гет запрос параметров
 
   getOrder() {
+    this.form.get('type')?.setValue('order')
     this.dialogRef = this.dialog.open(this.popup);
-    this.dialogRef.backdropClick()
-      .subscribe(() => {
-        this.router.navigate(['/']);
-      });
   }
 
   getRequest() {
-
+    const formData = this.form.getRawValue()
+    this.requestService.createRequest(formData).subscribe()
   }
 
   closePopup() {
