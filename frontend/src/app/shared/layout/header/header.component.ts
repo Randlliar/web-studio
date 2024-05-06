@@ -28,8 +28,6 @@ user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
       const user = this.userInfoService.getUserInfo().subscribe()
-      console.log(user)
-
     })
   }
 
