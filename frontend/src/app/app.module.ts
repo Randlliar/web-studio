@@ -14,6 +14,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MainComponent} from "./views/main/main.component";
 import {MatDialogModule} from "@angular/material/dialog";
 import {AuthInterceptor} from "./core/auth/auth.interceptor";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -23,18 +24,19 @@ import {AuthInterceptor} from "./core/auth/auth.interceptor";
     FooterComponent,
     MainComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    FormsModule,
-    MatMenuModule,
-    ReactiveFormsModule,
-    CarouselModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        FormsModule,
+        MatMenuModule,
+        ReactiveFormsModule,
+        CarouselModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        SharedModule
+    ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

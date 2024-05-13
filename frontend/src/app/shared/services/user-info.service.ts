@@ -11,8 +11,8 @@ import {AuthService} from "../../core/auth/auth.service";
 export class UserInfoService {
   constructor(private http: HttpClient) { }
 
+
   getUserInfo(): Observable<UserInfoType > {
     return this.http.get<UserInfoType>(environment.api + 'users');
   }
-
 }

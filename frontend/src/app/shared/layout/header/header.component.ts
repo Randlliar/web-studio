@@ -22,14 +22,23 @@ user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
               private userInfoService: UserInfoService
   ) {
     this.isLogged = this.authService.getIsLoggedIn();
+
+    if (this.isLogged) {
+      this.getUserInfo();
+    }
   }
 
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
-      const user = this.userInfoService.getUserInfo().subscribe()
+      if (this.isLogged) {
+        this.getUserInfo();
+      }
     })
+
+
   }
+
 
   logout() {
     this.authService.logout()
@@ -49,6 +58,10 @@ user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
     this.authService.userId = null;
     this._snackBar.open('Вы вышли из системы');
     this.router.navigate(['/']);
+  }
+
+  getUserInfo() {
+    this.userInfoService.getUserInfo().subscribe();
   }
 
 }

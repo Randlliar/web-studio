@@ -44,14 +44,8 @@
       <div class="container">
         <div class="blog-title">Блог</div>
         <div class="blog-cards">
-          <div class="blog-card" *ngFor="let article of articlesPage?.items">
-            <div>
-              <div class="blog-card-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
-              <div class="blog-card-title">{{ article.title }}</div>
-              <div class="blog-card-description">{{ article.description }}</div>
-            </div>
-            <a class="blog-card-more">Читать дальше</a>
-          </div>
+          <app-article-card *ngFor="let article of articlesPage?.items" [article]="article">
+          </app-article-card>
 
         </div>
       </div>
