@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="article-card">
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/articles.type.ts" afterDir="false" />
+    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="to do comments block">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/article.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/article.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +103,8 @@
       <workItem from="1715885705735" duration="1699000" />
       <workItem from="1715931284273" duration="7471000" />
       <workItem from="1715961795358" duration="2505000" />
-      <workItem from="1716193195282" duration="7033000" />
+      <workItem from="1716193195282" duration="7175000" />
+      <workItem from="1716229331479" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="backend files">
       <option name="closed" value="true" />
@@ -176,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715622206093</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="to do comments block">
+      <option name="closed" value="true" />
+      <created>1716213426684</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716213426685</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +195,7 @@
     <MESSAGE value="get request" />
     <MESSAGE value="article component" />
     <MESSAGE value="article-card" />
-    <option name="LAST_COMMIT_MESSAGE" value="article-card" />
+    <MESSAGE value="to do comments block" />
+    <option name="LAST_COMMIT_MESSAGE" value="to do comments block" />
   </component>
 </project>
