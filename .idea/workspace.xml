@@ -4,86 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="">
+    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="article-card">
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/articles.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/migrations/20221128150925-addUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/migrations/20221128150925-addUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/migrations/20221128195517-addCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/migrations/20221128195517-addCategories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/migrations/20221128203051-addProducts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/0-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/0-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/0-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/1-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/1-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/1-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/10-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/10-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/10-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/11-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/11-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/12-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/12-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/13-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/14-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/14-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/2-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/2-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/2-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/3-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/3-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/4-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/4-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/5-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/5-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/6-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/6-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/6-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/7-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/8-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/8-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/9-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/9-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/images/products/9-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/cart.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/favorite.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/order.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/product.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/type.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/cart.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/favorite.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/order.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/product.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/type.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/user.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/cart.normalizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/favorite.normalizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/order.normalizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/product.normalizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/type.normalizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/normalizers/user.normalizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/normalizers/user.normalizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/cart.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/favorite.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/order.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/product.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/type.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/user.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/cart.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/utils/common/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utils/common/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/utils/token.utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utils/token.utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/utils/validation.utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utils/validation.utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/article.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/article.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,21 +56,35 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/itlogia/web-studio&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/itlogia/HTML_Module/Kr_html&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Program Files/nodejs/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\itlogia\\web-studio\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\itlogia\web-studio\frontend\src\types" />
+      <recent name="D:\itlogia\web-studio\frontend\src\app\shared\services" />
+      <recent name="D:\itlogia\web-studio\frontend\src\app\core\auth" />
+      <recent name="D:\itlogia\web-studio\backend\public\images\articles" />
+      <recent name="D:\itlogia\web-studio\backend\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\itlogia\web-studio\backend" />
+      <recent name="D:\itlogia\web-studio\frontend\src\app\views\main" />
+      <recent name="D:\itlogia\web-studio\frontend\src\app\views\main\main" />
+      <recent name="D:\itlogia\web-studio\frontend\src\app\shared" />
+      <recent name="D:\itlogia\web-studio\frontend\src\assets\images\reviews" />
+      <recent name="D:\itlogia\web-studio\backend\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -132,8 +96,87 @@
       <option name="presentableId" value="Default" />
       <updated>1713787869789</updated>
       <workItem from="1713787870869" duration="3226000" />
-      <workItem from="1713865425853" duration="654000" />
+      <workItem from="1713865425853" duration="13098000" />
+      <workItem from="1713900174504" duration="5297000" />
+      <workItem from="1713955204652" duration="5991000" />
+      <workItem from="1714034025067" duration="22959000" />
+      <workItem from="1714232748595" duration="10556000" />
+      <workItem from="1714247204040" duration="52000" />
+      <workItem from="1714470580949" duration="8552000" />
+      <workItem from="1714553201337" duration="1634000" />
+      <workItem from="1714636665076" duration="2268000" />
+      <workItem from="1714671991546" duration="5315000" />
+      <workItem from="1714836474415" duration="6385000" />
+      <workItem from="1715020119067" duration="3564000" />
+      <workItem from="1715184410123" duration="1926000" />
+      <workItem from="1715620393529" duration="3417000" />
+      <workItem from="1715623837764" duration="233000" />
+      <workItem from="1715643798727" duration="2391000" />
+      <workItem from="1715703096467" duration="1262000" />
+      <workItem from="1715794196079" duration="4326000" />
+      <workItem from="1715850808193" duration="4936000" />
+      <workItem from="1715885705735" duration="1699000" />
+      <workItem from="1715931284273" duration="7471000" />
+      <workItem from="1715961795358" duration="2505000" />
+      <workItem from="1716193195282" duration="7033000" />
     </task>
+    <task id="LOCAL-00001" summary="backend files">
+      <option name="closed" value="true" />
+      <created>1713877475899</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713877475899</updated>
+    </task>
+    <task id="LOCAL-00002" summary="to do main">
+      <option name="closed" value="true" />
+      <created>1714476039291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714476039291</updated>
+    </task>
+    <task id="LOCAL-00003" summary="to do popup">
+      <option name="closed" value="true" />
+      <created>1714480902257</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714480902257</updated>
+    </task>
+    <task id="LOCAL-00004" summary="to do auth">
+      <option name="closed" value="true" />
+      <created>1714843121619</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714843121619</updated>
+    </task>
+    <task id="LOCAL-00005" summary="get request">
+      <option name="closed" value="true" />
+      <created>1714844370390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714844370390</updated>
+    </task>
+    <task id="LOCAL-00006" summary="article component">
+      <option name="closed" value="true" />
+      <created>1715030261455</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715030261455</updated>
+    </task>
+    <task id="LOCAL-00007" summary="article-card">
+      <option name="closed" value="true" />
+      <created>1715622206093</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715622206093</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,5 +192,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend files" />
+    <MESSAGE value="to do main" />
+    <MESSAGE value="to do popup" />
+    <MESSAGE value="to do auth" />
+    <MESSAGE value="get request" />
+    <MESSAGE value="article component" />
+    <MESSAGE value="article-card" />
+    <option name="LAST_COMMIT_MESSAGE" value="article-card" />
   </component>
 </project>

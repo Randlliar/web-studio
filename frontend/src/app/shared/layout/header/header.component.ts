@@ -15,7 +15,8 @@ import {UserInfoType} from "../../../../types/user-info.type";
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
-user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
+  user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
+
   constructor(private authService: AuthService,
               private _snackBar: MatSnackBar,
               private router: Router,
@@ -61,7 +62,8 @@ user$: Observable<UserInfoType | null> = this.authService.user$.asObservable();
   }
 
   getUserInfo() {
-    this.userInfoService.getUserInfo().subscribe();
+    const asd = this.userInfoService.getUserInfo().subscribe();
+    console.log(asd)
   }
 
 }

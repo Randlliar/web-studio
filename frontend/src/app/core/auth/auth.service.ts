@@ -90,7 +90,7 @@ export class AuthService {
     const tokens = this.getTokens();
     if (tokens && tokens.refreshToken) {
       return this.http.post<DefaultResponseType | LoginResponseType>(environment.api + 'refresh', {
-        refreshToken: tokens.refreshToken
+        refreshToken: tokens.refreshToken.trim()
       });
     }
 

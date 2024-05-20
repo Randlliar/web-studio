@@ -76,3 +76,32 @@ input {
 }
 
 
+.article-content {
+
+  width: 818px;
+
+  h3 {
+    color: rgb(112, 159, 220);
+    font-family: Lora, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+  }
+
+  p {
+    color: rgb(7, 23, 57);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  ol, ul {
+    padding: 20px;
+    li {
+      color: rgb(7, 23, 57);
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+    }
+  }
+}

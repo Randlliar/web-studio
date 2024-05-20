@@ -275,50 +275,21 @@
 
     .blog-cards {
       display: flex;
+      margin-bottom: 40px;
+    }
 
-      .blog-card {
-        margin-right: 25px;
-        width: 291px;
-        //height: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .blog-next {
+      color: $blue-text-color;
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      text-decoration: none;
 
-
-        .blog-card-image {
-          width: 100%;
-          height: 291px;
-          margin-bottom: 15px;
-          background-size: cover;
-        }
-
-
-        .blog-card-title {
-          color: $blue-text-color;
-          font-family: Montserrat, sans-serif;
-          font-size: 20px;
-          font-weight: 500;
-          margin-bottom: 20px;
-        }
-
-        .blog-card-description {
-          color: $dark-blue-text-color;
-          font-family: Montserrat, sans-serif;
-          font-size: 14px;
-          font-weight: 400;
-        }
-
-        .blog-card-more {
-          color: $blue-text-color;
-          font-family: Montserrat, sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          border-bottom: 1px solid $blue-text-color;
-          text-decoration: none;
-          cursor: pointer;
-          margin-top: 20px;
-          width: 124px;
-        }
+      span {
+        margin-right: 17px;
       }
     }
   }
@@ -521,4 +492,8 @@
     padding: 15px 40px;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }

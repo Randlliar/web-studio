@@ -1,8 +1,11 @@
 <div class="blog-card">
   <div>
-    <div class="blog-card-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
+    <div class="blog-card-image" style="background-image: url({{serverStaticPath + article.image}})">
+      <div class="blog-category">{{ article.category }}</div>
+
+    </div>
     <div class="blog-card-title">{{ article.title }}</div>
     <div class="blog-card-description">{{ article.description }}</div>
   </div>
-  <a class="blog-card-more">Читать дальше</a>
+  <a class="blog-card-more" routerLink="/articles/{{article.url}}">Читать дальше </a>
 </div>
