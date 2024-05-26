@@ -7,7 +7,6 @@ import {CategoriesService} from "../../shared/services/categories.service";
 import {CategoriesType} from "../../../types/categories.type";
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {ArticlesType} from "../../../types/articles.type";
 import {FormControl, FormGroup} from "@angular/forms";
 import {RequestService} from "../../shared/services/request.service";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";

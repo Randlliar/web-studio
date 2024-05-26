@@ -13,16 +13,11 @@ export class ArticleCardComponent implements OnInit {
   isLogged: boolean = false;
   serverStaticPath = environment.serverStaticPath;
 
-
-
   constructor(
-
   ) {
   }
 
   ngOnInit(): void {
-
-
 
   }
 
