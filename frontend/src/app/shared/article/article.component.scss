@@ -61,6 +61,14 @@
         margin-left: 133px;
         margin-top: 60px;
 
+        .read-more {
+          color: $blue-text-color;
+          font-family: Lora, sans-serif;
+          font-size: 26px;
+          font-weight: 400;
+          margin-bottom: 20px ;
+        }
+
         .card {
           margin-bottom: 60px;
         }
@@ -84,38 +92,61 @@
       }
     }
 
+
     .add-comments {
       margin-top: 60px;
       display: flex;
       flex-direction: column;
+
 
       .add-comments-title {
         color: $blue-text-color;
         font-family: Lora, sans-serif;
         font-size: 38px;
         font-weight: 400;
+        margin-bottom: 40px;
+
       }
 
-      .add-comments-textarea {
-        box-sizing: border-box;
-        border: 2px solid $blue-text-color;
-        border-radius: 3px;
-        width: 818px;
-        height: 248px;
-        padding: 20px;
-        color: rgb(168, 171, 167);
+      .not-logged {
         font-family: Montserrat, sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 130%;
-        margin-top: 40px;
+
+        a {
+          color: rgb(112, 159, 220);
+          text-decoration: none;
+        }
       }
 
-      .add-comments-btn {
-        margin-top: 20px;
-        padding: 15px 40px;
-        max-width: 422px;
+
+      .logged {
+        display: flex;
+        flex-direction: column;
+
+        .add-comments-textarea {
+          box-sizing: border-box;
+          border: 2px solid $blue-text-color;
+          border-radius: 3px;
+          width: 818px;
+          height: 248px;
+          padding: 20px;
+          color: rgb(168, 171, 167);
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 130%;
+        }
+
+        .add-comments-btn {
+          margin-top: 20px;
+          padding: 15px 40px;
+          max-width: 422px;
+        }
       }
+
+
     }
 
     .comments {
@@ -182,6 +213,7 @@
       .comments-action {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         span {
           margin-right: 3px;

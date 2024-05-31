@@ -13,6 +13,7 @@
     <div class="article-bottom">
       <div class="article-content" [innerHTML]="article.text"></div>
       <div class="cards">
+        <div class="read-more">Читайте также:</div>
         <app-article-card class="card" *ngFor="let article of articles" [article]="article">
 
         </app-article-card>
@@ -69,10 +70,20 @@
 
     </div>
 
+
+
     <div class="add-comments">
+
       <div class="add-comments-title">Комментарии к статье</div>
-      <textarea class="add-comments-textarea"></textarea>
-      <button class="btn add-comments-btn" (click)="addComment()">Опубликовать комментарий</button>
+
+      <div class="not-logged" *ngIf="!isLogged">
+        Чтобы оставлять комментарии, <a href="/login">войдите</a>  или  <a href="/signup">зарегистрируйтесь.</a>
+      </div>
+      <div class="logged" *ngIf="isLogged">
+        <textarea class="add-comments-textarea"  [(ngModel)]="comment"></textarea>
+        <button class="btn add-comments-btn" (click)="addComment()">Опубликовать комментарий</button>
+      </div>
+
     </div>
 
     <ng-container *ngIf="comments">

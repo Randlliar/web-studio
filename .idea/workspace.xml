@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="to do comments block">
+    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="add some functional with comments">
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/activeParams.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="HTML File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -37,11 +51,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/itlogia/HTML_Module/Kr_html&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Freelance-Studio-master&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -65,11 +80,11 @@
       <recent name="D:\itlogia\web-studio\backend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\itlogia\web-studio\frontend\src\assets\images" />
       <recent name="D:\itlogia\web-studio\frontend\src\app\views\main" />
       <recent name="D:\itlogia\web-studio\frontend\src\app\views\main\main" />
       <recent name="D:\itlogia\web-studio\frontend\src\app\shared" />
       <recent name="D:\itlogia\web-studio\frontend\src\assets\images\reviews" />
-      <recent name="D:\itlogia\web-studio\backend\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -104,7 +119,21 @@
       <workItem from="1715931284273" duration="7471000" />
       <workItem from="1715961795358" duration="2505000" />
       <workItem from="1716193195282" duration="7175000" />
-      <workItem from="1716229331479" duration="600000" />
+      <workItem from="1716229331479" duration="1799000" />
+      <workItem from="1716231793465" duration="133000" />
+      <workItem from="1716231932465" duration="219000" />
+      <workItem from="1716232173982" duration="2920000" />
+      <workItem from="1716288859330" duration="4788000" />
+      <workItem from="1716317482455" duration="5273000" />
+      <workItem from="1716365550304" duration="1984000" />
+      <workItem from="1716641401960" duration="10464000" />
+      <workItem from="1716710662191" duration="4974000" />
+      <workItem from="1716811953064" duration="786000" />
+      <workItem from="1716813208711" duration="817000" />
+      <workItem from="1716916779810" duration="7088000" />
+      <workItem from="1717005946973" duration="3800000" />
+      <workItem from="1717151988973" duration="3274000" />
+      <workItem from="1717168294419" duration="2832000" />
     </task>
     <task id="LOCAL-00001" summary="backend files">
       <option name="closed" value="true" />
@@ -170,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716213426685</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="to do comments block">
+      <option name="closed" value="true" />
+      <created>1716230433976</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716230433976</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add some functional with comments">
+      <option name="closed" value="true" />
+      <created>1716711034739</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716711034739</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +241,7 @@
     <MESSAGE value="article component" />
     <MESSAGE value="article-card" />
     <MESSAGE value="to do comments block" />
-    <option name="LAST_COMMIT_MESSAGE" value="to do comments block" />
+    <MESSAGE value="add some functional with comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some functional with comments" />
   </component>
 </project>

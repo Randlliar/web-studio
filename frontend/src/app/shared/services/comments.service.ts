@@ -22,7 +22,10 @@ export class CommentsService {
   //   return this.http.post<CommentCountType>(`${environment.api}comments/${id}/apply-action`, params);
   // }
 
-  addComment(params: RequestType): Observable<DefaultResponseType> {
-    return this.http.post<DefaultResponseType>(environment.api + 'comments', params);
+  addComment(text: string, article: string): Observable<DefaultResponseType> {
+    return this.http.post<DefaultResponseType>(environment.api + 'comments', {
+      text: text,
+      article: article
+    });
   }
 }
