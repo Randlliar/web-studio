@@ -66,18 +66,30 @@
 
         .catalog-sorting-body {
           position: absolute;
-          width: 100%;
           z-index: 3;
-          display: block;
+          display: none;
           padding: 12px 23px;
           border-radius: 0 0 5px 5px;
-          background: rgb(245, 245, 245);
-          color: rgb(142, 142, 142);
+          background: rgb(255, 255, 255);
           box-sizing: border-box;
+          border: 2px solid rgb(185, 213, 253);
+          color: rgb(190, 190, 190);
+          font-family: Montserrat, sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          height: 185px;
+          width: 257px;
+          overflow: hidden;
 
           .catalog-sorting-item {
             margin-bottom: 14px;
             cursor: pointer;
+
+            &:checked {
+              color: rgb(49, 49, 49);
+              background: transparent;
+            }
+
 
             &:last-child {
               margin-bottom: 0;
@@ -104,6 +116,7 @@
             display: block;
           }
         }
+
       }
     }
 
@@ -167,6 +180,10 @@
 
         &.disabled {
           opacity: 0.5;
+
+          &svg {
+            fill: rgb(190, 190, 190);
+          }
         }
       }
 
@@ -183,19 +200,19 @@
           text-decoration: none;
           width: 60px;
           height: 60px;
-          margin-right: 15px;
           font-size: 20px;
-          //color: $gray-text-color;
+          color: rgb(7, 23, 57);
           cursor: pointer;
 
           &.active {
             border-radius: 50%;
-            background: rgb(182, 213, 185);
+            color: rgb(185, 213, 253);
           }
 
           &:last-child {
             margin-right: 0;
           }
+
         }
       }
     }

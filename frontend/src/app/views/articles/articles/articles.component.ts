@@ -24,6 +24,8 @@ export class ArticlesComponent implements OnInit {
   pages: number[] = [];
   categories: CategoriesType[] = [];
   categoriesController: FormControl = new FormControl<string[]>([]);
+  sortingOpen = false;
+
 
   constructor(private articleService: ArticleService,
               private categoriesService: CategoriesService,
@@ -47,7 +49,9 @@ export class ArticlesComponent implements OnInit {
   subscribeToCategoriesChanges() {
     this.categoriesController.valueChanges.subscribe((data: string[]) => {
       this.activeParams.categories = data;
-      this.getArticles();
+      console.log(data)
+
+      this.processContent();
     })
   }
 
@@ -81,7 +85,6 @@ export class ArticlesComponent implements OnInit {
         for (let i = 1; i <= data.pages; i++) {
           this.pages.push(i);
         }
-        console.log(this.pages)
       })
   }
 
@@ -108,6 +111,10 @@ export class ArticlesComponent implements OnInit {
         queryParams: this.activeParams
       });
     }
+  }
+
+  toggleSorting() {
+    this.sortingOpen = !this.sortingOpen;
   }
 
 }
