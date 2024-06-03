@@ -4,7 +4,8 @@ export type CommentType = {
   date: string,
   likesCount: number,
   dislikesCount: number,
-  user: UserType
+  user: UserType,
+  userAction?: string
 }
 
 export type UserType = {

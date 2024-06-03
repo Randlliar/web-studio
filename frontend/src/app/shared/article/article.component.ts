@@ -1,4 +1,4 @@
-import {Component, NgIterable, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, NgIterable, OnInit} from '@angular/core';
 import {ArticleService} from "../services/article.service";
 import {ArticleType} from "../../../types/article.type";
 import {ActivatedRoute, Params, Router} from "@angular/router";
@@ -10,6 +10,7 @@ import {CommentsService} from "../services/comments.service";
 import {CommentCountType, CommentType} from "../../../types/comments.type";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../core/auth/auth.service";
+import {ArticleCommentsActionType} from "../../../types/article-comments-action.type";
 
 @Component({
   selector: 'app-article',
@@ -25,13 +26,13 @@ export class ArticleComponent implements OnInit {
   comments!: CommentCountType;
   comment: string = '';
 
-
   constructor(private articleService: ArticleService,
               private commentsService: CommentsService,
               private activatedRoute: ActivatedRoute,
               private authService: AuthService,
               private _snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private changedDetector: ChangeDetectorRef) {
     this.isLogged = this.authService.getIsLoggedIn();
 
   }
@@ -43,11 +44,47 @@ export class ArticleComponent implements OnInit {
     })
   }
 
+addAction(comment:CommentType, action: string) {
+
+    this.commentsService.addReaction(comment.id, action )
+      .subscribe(data => {
+        // if (comment.userAction === undefined) {
+          // if(action === 'like') {
+          //   comment.likesCount++;
+          // }
+          // if(action === 'dislike') {
+          //   comment.dislikesCount++;
+          // }
+          // comment.userAction = action;
+        // }
+
+
+        // this.changedDetector.detectChanges()
+        this.getComments()
+      });
+}
+
 
   getComments() {
     this.commentsService.getComments(0, this.article.id)
       .subscribe((data: CommentCountType) => {
         this.comments = data;
+
+        this.getArticlesCommentsAction();
+      })
+  }
+
+  getArticlesCommentsAction() {
+    this.commentsService.getArticlesCommentsAction(this.article.id)
+      .subscribe((data: ArticleCommentsActionType[]) => {
+        data.forEach(item => {
+          const commentId = item.comment;
+         const comment = this.comments.comments.find(comment => {
+            return comment.id === commentId;
+          })
+          comment!.userAction = item.action;
+        })
+        this.changedDetector.detectChanges()
       })
   }
 
