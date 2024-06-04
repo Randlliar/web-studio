@@ -49,7 +49,6 @@ export class ArticlesComponent implements OnInit {
   subscribeToCategoriesChanges() {
     this.categoriesController.valueChanges.subscribe((data: string[]) => {
       this.activeParams.categories = data;
-      console.log(data)
 
       this.processContent();
     })
