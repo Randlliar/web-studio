@@ -37,6 +37,14 @@
             cursor: pointer;
             text-decoration: none;
 
+            a {
+              text-decoration: none;
+
+              &:visited {
+                color: $dark-blue-text-color;
+              }
+            }
+
             &:last-child {
               margin-right: 0;
             }

@@ -17,10 +17,10 @@
             <a>Услуги</a>
           </li>
           <li>
-            <a> О нас</a>
+            <a>О нас</a>
           </li>
           <li>
-            <a> Статьи</a>
+            <a>Статьи</a>
           </li>
           <li>
             <a> Отзывы</a>
@@ -40,7 +40,7 @@
     <div class="footer-info-block">
       <div class="footer-info-block-title">Телефон</div>
       <a class="footer-info-block-content" href="tel:+74993431334">+7 (499) 343-13-34</a>
-      <button class="btn footer-btn">Перезвоните мне</button>
+      <button class="btn footer-btn" (click)="getOrder()">Перезвоните мне</button>
     </div>
     <div class="footer-info-block">
       <div class="footer-info-block-title">E-mail</div>
@@ -71,5 +71,23 @@
     © 2022. Все права защищены
   </a>
 </div>
+
+  <ng-template #popup>
+    <div class="popup">
+      <div class="popup-close" (click)="closePopup()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+          <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="modal-title">Бесплатная консультация</div>
+      <form [formGroup]="form" (submit)="getRequest()">
+        <input class="modal-input" placeholder="Ваше имя" formControlName="name">
+        <input class="modal-input" placeholder="Ваш номер телефона" formControlName="phone">
+        <button class="btn" type="submit">Заказать звонок</button>
+      </form>
+    </div>
+  </ng-template>
+
 
 </footer>

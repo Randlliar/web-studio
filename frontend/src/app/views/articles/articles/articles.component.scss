@@ -84,10 +84,15 @@
           .catalog-sorting-item {
             margin-bottom: 14px;
             cursor: pointer;
+            background-image: url('/assets/images/main/plus.png');
+            background-repeat: no-repeat;
+            display: flex;
+            background-position: right;
 
             &:checked {
               color: rgb(49, 49, 49);
-              background: transparent;
+              background-image: url('/assets/images/main/minus.png');
+              background-color: transparent;
             }
 
 
@@ -104,6 +109,7 @@
         &.open {
           width: 257px;
           min-width: 257px;
+
           .catalog-sorting-head {
             color: rgb(0, 0, 0);
             border-radius: 5px 5px 0 0;
@@ -119,7 +125,6 @@
 
       }
     }
-
 
 
     .blog {
@@ -138,13 +143,12 @@
 
         .blog-cards {
           display: grid;
-          grid-template-columns: repeat(4,1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 40px 25px;
 
         }
       }
     }
-
 
 
     .catalog-layout {

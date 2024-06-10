@@ -5,7 +5,7 @@ export type ArticlesType = {
       image: string,
       date: string,
       category: string,
-      url: string
+      url: string,
 }
 
 export type ArticlePageType = {

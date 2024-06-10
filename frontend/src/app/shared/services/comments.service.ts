@@ -23,8 +23,9 @@ export class CommentsService {
     return this.http.get<ArticleCommentsActionType[]>(`${environment.api}comments/article-comment-actions`, {
       params: {
         articleId
-      }
-    });
+      },
+
+    }, );
   }
 
   addReaction(id: string, action: string): Observable<CommentCountType> {

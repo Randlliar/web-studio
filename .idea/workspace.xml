@@ -4,21 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="add some functional with comments">
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/activeParams.type.ts" afterDir="false" />
+    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="edit like/dislike functional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article-card/article-card.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/article.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/article.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/articles.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/articles.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/comments.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/comments.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/request.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/request.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +60,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Freelance-Studio-master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/itlogia/web-studio/frontend/src/types&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -133,7 +137,15 @@
       <workItem from="1716916779810" duration="7088000" />
       <workItem from="1717005946973" duration="3800000" />
       <workItem from="1717151988973" duration="3274000" />
-      <workItem from="1717168294419" duration="2832000" />
+      <workItem from="1717168294419" duration="2864000" />
+      <workItem from="1717351726719" duration="7489000" />
+      <workItem from="1717400052014" duration="6709000" />
+      <workItem from="1717423559152" duration="353000" />
+      <workItem from="1717493962014" duration="3528000" />
+      <workItem from="1717569407716" duration="8229000" />
+      <workItem from="1717601137206" duration="8177000" />
+      <workItem from="1717753337719" duration="7520000" />
+      <workItem from="1718000660820" duration="4617000" />
     </task>
     <task id="LOCAL-00001" summary="backend files">
       <option name="closed" value="true" />
@@ -215,7 +227,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716711034739</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="in">
+      <option name="closed" value="true" />
+      <created>1717182256690</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717182256690</updated>
+    </task>
+    <task id="LOCAL-00012" summary="some fix in article component">
+      <option name="closed" value="true" />
+      <created>1717400080151</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717400080151</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add like/dislike functional">
+      <option name="closed" value="true" />
+      <created>1717423529821</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717423529821</updated>
+    </task>
+    <task id="LOCAL-00014" summary="edit like/dislike functional">
+      <option name="closed" value="true" />
+      <created>1717509370975</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717509370975</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +286,10 @@
     <MESSAGE value="article-card" />
     <MESSAGE value="to do comments block" />
     <MESSAGE value="add some functional with comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some functional with comments" />
+    <MESSAGE value="in" />
+    <MESSAGE value="some fix in article component" />
+    <MESSAGE value="add like/dislike functional" />
+    <MESSAGE value="edit like/dislike functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit like/dislike functional" />
   </component>
 </project>

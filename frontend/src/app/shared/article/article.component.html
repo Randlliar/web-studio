@@ -87,7 +87,7 @@
     </div>
 
     <ng-container *ngIf="comments">
-      <div class="comments" *ngFor="let comment of comments.comments">
+      <div class="comments" *ngFor="let comment of comments">
         <div class="comments-top">
           <div class="comments-image">
             <svg width="43.000000" height="46.000000" viewBox="0 0 43 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
           </div>
           <div class="comments-right">
             <div class="comments-name" id="{{comment.id}}}">{{ comment.user.name }}</div>
-            <div class="comments-date">{{ comment.date }}</div>
+            <div class="comments-date">{{ comment.date | date: 'dd.MM.yyyy HH:mm': '' : ''}}</div>
           </div>
         </div>
         <div class="comments-text">{{
@@ -158,7 +158,6 @@
                 <g opacity="0.000000"/>
               </svg>
             </ng-template>
-
           </div>
           <div class="comments-action" (click)="addAction(comment,'violate')">
             <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -172,10 +171,23 @@
                     stroke-linejoin="round" stroke-linecap="round"/>
               <g opacity="0.000000"/>
             </svg>
-
           </div>
         </div>
+
       </div>
+      <div class="comments-more" *ngIf="comments.length < allComments" (click)="addMore()">
+      <span >
+        Загрузить ещё комментарии
+      </span>
+        <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs/>
+          <rect id="Arrow" width="20.000000" height="20.000000" fill="#FFFFFF" fill-opacity="0"/>
+          <path id="Vector" d="M10 14C9.41 14 8.83 13.77 8.39 13.33L2.95 7.9C2.71 7.65 2.71 7.25 2.95 7.01C3.2 6.77 3.59 6.77 3.84 7.01L9.27 12.45C9.67 12.85 10.32 12.85 10.72 12.45L16.15 7.01C16.4 6.77 16.79 6.77 17.04 7.01C17.28 7.25 17.28 7.65 17.04 7.9L11.6 13.33C11.16 13.77 10.58 14 10 14Z" fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+          <g opacity="0.000000"/>
+        </svg>
+
+      </div>
+
 
     </ng-container>
 

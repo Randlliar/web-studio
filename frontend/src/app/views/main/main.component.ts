@@ -97,7 +97,8 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.categoriesService.getCategories()
       .subscribe((data: CategoriesType[]) => {
-        this.categories = data
+        this.categories = data;
+        console.log(this.categories)
 
       })
 

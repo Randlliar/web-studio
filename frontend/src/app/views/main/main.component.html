@@ -37,7 +37,7 @@
             <div class="main-banner-text">
               <div class="main-banner-text-title">Предложение месяца</div>
               <div class="main-banner-text-info">Продвижение в Instagram для вашего бизнеса <span>-15%</span>!</div>
-              <button class="btn">Подробнее</button>
+              <button class="btn" (click)="getOrder()">Подробнее</button>
             </div>
           </div>
         </ng-template>
@@ -51,7 +51,7 @@
               <div class="main-banner-text-title">Акция</div>
               <div class="main-banner-text-info">Нужен грамотный <span>копирайтер</span>?</div>
               <div class="main-banner-text-description">Весь декабрь у нас действует акция на работу копирайтера.</div>
-              <button class="btn">Подробнее</button>
+              <button class="btn" (click)="getOrder()">Подробнее</button>
             </div>
           </div>
         </ng-template>
@@ -328,8 +328,8 @@
 </div>
 
 <ng-template #popup>
-  <div class="main-popup">
-    <div class="main-popup-close" (click)="closePopup()">
+  <div class="popup">
+    <div class="popup-close" (click)="closePopup()">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
         <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
@@ -338,7 +338,7 @@
     <div class="modal-title">Заявка на услугу</div>
     <form [formGroup]="form" (submit)="getRequest()">
       <select type="text" placeholder="Тип..." class="input-category" id="category-type" formControlName="service">
-        <option value="{{category.url}}" *ngFor="let category of categories">{{ category.name }}</option>
+        <option value="{{category.name}}" *ngFor="let category of categories">{{ category.name }}</option>
       </select>
       <input class="modal-input" placeholder="Ваше имя" formControlName="name">
       <input class="modal-input" placeholder="Ваш номер телефона" formControlName="phone">

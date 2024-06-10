@@ -14,7 +14,7 @@ export type UserType = {
 }
 
 export type CommentCountType = {
-  allCount: number,
+  allCount?: number,
   comments : CommentType[]
 }
 

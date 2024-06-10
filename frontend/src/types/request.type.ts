@@ -1,6 +1,6 @@
 export type RequestType = {
   name: string;
   phone: string;
-  service: string;
+  service?: string;
   type: string;
 }

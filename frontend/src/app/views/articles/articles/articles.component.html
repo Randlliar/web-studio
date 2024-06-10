@@ -31,7 +31,7 @@
 
           <div class="catalog-sorting" [class.open]="sortingOpen" (click)="toggleSorting()">
             <div class="catalog-sorting-head">
-              <span >Сортировать</span>
+              <span>Сортировать</span>
               <a>
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -41,8 +41,12 @@
               </a>
             </div>
             <select class="catalog-sorting-body" [formControl]="categoriesController" multiple [class.open]="sortingOpen" (click)="toggleSorting()">
-              <option  class="catalog-sorting-item" *ngFor="let category of categories" [value]="category.url">
-                {{category.name}}
+              <option style=""  class="catalog-sorting-item" *ngFor="let category of categories" [value]="category.url">
+               {{category.name}}
+                <svg width="10.435547" height="10.177734" viewBox="0 0 10.4355 10.1777" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs/>
+                  <path id="+" d="M5.97 5.8L10.43 5.8L10.43 4.39L5.97 4.39L5.97 0L4.46 0L4.46 4.39L0 4.39L0 5.8L4.46 5.8L4.46 10.17L5.97 10.17L5.97 5.8Z" fill="#BEBEBE" fill-opacity="1.000000" fill-rule="evenodd"/>
+                </svg>
               </option>
             </select>
 

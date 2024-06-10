@@ -23,7 +23,9 @@ export class ArticleComponent implements OnInit {
   article!: ArticleType;
   serverStaticPath = environment.serverStaticPath;
   articles: ArticlesType[] = [];
-  comments!: CommentCountType;
+  comments!: CommentType[];
+  allComments!: number;
+  sliceComm!: CommentType[];
   comment: string = '';
 
   constructor(private articleService: ArticleService,
@@ -44,48 +46,54 @@ export class ArticleComponent implements OnInit {
     })
   }
 
-addAction(comment:CommentType, action: string) {
-
-    this.commentsService.addReaction(comment.id, action )
+  addAction(comment: CommentType, action: string) {
+    if (this.isLogged) {
+    this.commentsService.addReaction(comment.id, action)
       .subscribe(data => {
-        // if (comment.userAction === undefined) {
-          // if(action === 'like') {
-          //   comment.likesCount++;
-          // }
-          // if(action === 'dislike') {
-          //   comment.dislikesCount++;
-          // }
-          // comment.userAction = action;
-        // }
-
-
-        // this.changedDetector.detectChanges()
-        this.getComments()
+        this.getArticlesCommentsAction();
+        this._snackBar.open('Ваш голос учтен');
       });
-}
+    } else {
+      this._snackBar.open('Для оценки вам нужно зарегистрировться');
+    }
+  }
 
+
+  addMore() {
+    const slice = this.sliceComm.slice(0,5);
+    this.sliceComm = this.sliceComm.slice(6, this.sliceComm.length)
+    this.comments = this.comments.concat(slice);
+  }
 
   getComments() {
-    this.commentsService.getComments(0, this.article.id)
+    this.commentsService.getComments(3, this.article.id)
       .subscribe((data: CommentCountType) => {
-        this.comments = data;
+        let asd = data.allCount
+        this.allComments = data.comments.length;
+        this.sliceComm = data.comments;
+        console.log(data)
 
         this.getArticlesCommentsAction();
       })
   }
 
   getArticlesCommentsAction() {
-    this.commentsService.getArticlesCommentsAction(this.article.id)
-      .subscribe((data: ArticleCommentsActionType[]) => {
-        data.forEach(item => {
-          const commentId = item.comment;
-         const comment = this.comments.comments.find(comment => {
-            return comment.id === commentId;
+    if (this.isLogged) {
+      this.commentsService.getArticlesCommentsAction(this.article.id)
+        .subscribe((data: ArticleCommentsActionType[]) => {
+          data.forEach(item => {
+            const commentId = item.comment;
+            const comment = this.comments.find(comment => {
+              console.log('comment.id' , comment.id)
+              console.log(commentId)
+              return comment.id === commentId;
+            })
+            console.log(comment)
+            comment!.userAction = item.action;
           })
-          comment!.userAction = item.action;
+          this.changedDetector.detectChanges();
         })
-        this.changedDetector.detectChanges()
-      })
+    }
   }
 
   getArticles(params: Params) {
@@ -94,19 +102,21 @@ addAction(comment:CommentType, action: string) {
         this.articles = data;
       })
   }
+
   getArticle(params: Params) {
     this.articleService.getArticle(params['url'])
       .subscribe((data: ArticleType) => {
         this.article = data;
-
-      this.getComments();
+        this.comments = data.comments;
+        this.getComments();
+        this.getArticlesCommentsAction();
       })
   }
 
   addComment() {
     this.commentsService.addComment(this.comment, this.article.id)
       .subscribe(data => {
-        this.getComments();
+        this.getArticlesCommentsAction();
         this._snackBar.open('Комментарий успешно добавлен!');
       })
   }
