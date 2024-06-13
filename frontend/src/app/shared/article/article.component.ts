@@ -24,9 +24,7 @@ export class ArticleComponent implements OnInit {
   articles: ArticlesType[] = [];
   allCommentsLength: number = 0;
   allComments: CommentType[] = [];
-  sliceComm!: CommentType[];
   comment: string = '';
-  commAction!: ArticleCommentsActionType;
 
   constructor(private articleService: ArticleService,
               private commentsService: CommentsService,
@@ -47,80 +45,72 @@ export class ArticleComponent implements OnInit {
 
   addAction(comment: CommentType, action: string) {
     if (this.isLogged) {
-    this.commentsService.addReaction(comment.id, action)
-      .subscribe({
-      next: (data: CommentCountType) => {
-        const currentAction = comment.userAction;
+      this.commentsService.addReaction(comment.id, action)
+        .subscribe({
+          next: (data: CommentCountType) => {
+            const currentAction = comment.userAction;
 
-        if (action === 'violate') {
-          this._snackBar.open('Ваша жалоба отправлена');
-        } else {
-          if(currentAction === action) {
-            if (action === 'dislike') {
-              comment.dislikesCount--;
+            if (action === 'violate') {
+              this._snackBar.open('Ваша жалоба отправлена');
             } else {
-              comment.likesCount--;
+              if (currentAction === action) {
+                if (action === 'dislike') {
+                  comment.dislikesCount--;
+                } else {
+                  comment.likesCount--;
+                }
+              } else if (!currentAction) {
+                if (action === 'dislike') {
+                  comment.dislikesCount++;
+                } else {
+                  comment.likesCount++;
+                }
+              } else {
+                if (action === 'dislike') {
+                  comment.dislikesCount++;
+                  comment.likesCount--;
+                } else {
+                  comment.dislikesCount--;
+                  comment.likesCount++;
+                }
+              }
+
+
+              this.getActionForComments(comment);
+              // this.getArticlesCommentsAction();
+              this._snackBar.open('Ваш голос учтен');
             }
-          } else if(!currentAction) {
-            if (action === 'dislike') {
-              comment.dislikesCount++;
-            } else {
-              comment.likesCount++;
-            }
-          } else {
-            if (action === 'dislike') {
-              comment.dislikesCount++;
-              comment.likesCount--;
-            } else {
-              comment.dislikesCount--;
-              comment.likesCount++;
-            }
+
+
+          },
+          error: (error: HttpErrorResponse) => {
+            this._snackBar.open(error.error.message);
+            throw new Error(error.error.message)
           }
-
-
-         this.getActionForComments(comment);
-          // this.getArticlesCommentsAction();
-          this._snackBar.open('Ваш голос учтен');
-        }
-
-
-      },
-        error: (error: HttpErrorResponse) => {
-          this._snackBar.open(error.error.message);
-          throw new Error(error.error.message)
-        }
-      });
+        });
     } else {
       this._snackBar.open('Для оценки вам нужно зарегистрировться');
     }
   }
 
   loadMoreComments() {
-    if (this.allComments.length < 10){
+    if (this.allComments.length < 10) {
       this.getComments(0)
-      console.log(
-        this.allComments.length
-
-      )
-    } else if (this.allComments.length % 10 === 0){
+    } else if (this.allComments.length % 10 === 0) {
       this.getComments(this.allComments.length)
-      console.log(
-        this.allComments.length
-
-      )
     } else {
       this.getComments(this.allComments.length % 10)
     }
-    console.log(this.allComments.length)
 
   }
 
   get3Comm(offset: number) {
     this.commentsService.getComments(offset, this.article.id)
       .subscribe((data: CommentCountType) => {
-        this.allComments = data.comments.slice(0,3);
+        this.allComments = data.comments.slice(0, 3);
       })
   }
+
   getComments(offset: number) {
     this.commentsService.getComments(offset, this.article.id)
       .subscribe((data: CommentCountType) => {
@@ -128,10 +118,9 @@ export class ArticleComponent implements OnInit {
           this.allCommentsLength = data.allCount;
         }
         if (this.allComments.length < 3) {
-          this.allComments = data.comments.slice(0,3);
+          this.allComments = data.comments.slice(0, 3);
           this.getArticlesCommentsAction();
-        }
-         else if (this.allComments.length< 10) {
+        } else if (this.allComments.length < 10) {
           this.allComments = data.comments;
           this.getArticlesCommentsAction();
         } else {
@@ -140,15 +129,13 @@ export class ArticleComponent implements OnInit {
         }
 
         this.getArticlesCommentsAction();
-        // console.log(this.allComments.length)
-
       })
   }
 
   getActionForComments(comment: CommentType) {
     this.commentsService.getActionForComments(comment.id)
       .subscribe((data: ArticleCommentsActionType[]) => {
-        if(!data || data.length === 0) {
+        if (!data || data.length === 0) {
           comment.userAction = undefined;
           return;
         }
@@ -182,7 +169,6 @@ export class ArticleComponent implements OnInit {
         this.articles = data;
       })
   }
-
 
 
   loadArticleData(params: Params) {
