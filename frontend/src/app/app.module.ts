@@ -24,22 +24,24 @@ import {SharedModule} from "./shared/shared.module";
     FooterComponent,
     MainComponent,
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        FormsModule,
-        MatMenuModule,
-        ReactiveFormsModule,
-        CarouselModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatDialogModule,
-        SharedModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    FormsModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    CarouselModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    SharedModule
+  ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

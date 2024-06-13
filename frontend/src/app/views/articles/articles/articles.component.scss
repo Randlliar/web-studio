@@ -7,8 +7,6 @@
 
   .container {
     .catalog-title {
-      //color: $green-text-color;
-      //@include head-lora-36;
       margin-left: 317px;
       margin-bottom: 33px;
     }
@@ -17,17 +15,16 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      //margin-left: 317px;
 
       .catalog-applied-filters {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 40px;
 
         .catalog-applied-filter {
           box-sizing: border-box;
           border: 1px solid rgb(231, 241, 232);
           border-radius: 50px;
-          //color: $gray-text-color;
           font-size: 16px;
           padding: 8px 14px;
           display: flex;
@@ -55,9 +52,8 @@
         .catalog-sorting-head {
           display: flex;
           align-items: center;
-          padding: 12px 0 12px 23px;
+          padding: 12px 23px;
           justify-content: space-between;
-          //color: $gray-text-color;
 
           span {
             margin-right: 8px;
@@ -77,8 +73,7 @@
           font-family: Montserrat, sans-serif;
           font-size: 16px;
           font-weight: 400;
-          height: 185px;
-          width: 257px;
+          width: 190px;
           overflow: hidden;
 
           .catalog-sorting-item {
@@ -88,32 +83,27 @@
             background-repeat: no-repeat;
             display: flex;
             background-position: right;
-
-            &:checked {
-              color: rgb(49, 49, 49);
-              background-image: url('/assets/images/main/minus.png');
-              background-color: transparent;
-            }
-
+            height: 20px;
 
             &:last-child {
               margin-bottom: 0;
             }
 
             &.active {
-              color: rgb(49, 49, 49)
+              color: rgb(49, 49, 49);
+              background-image: url('/assets/images/main/minus.png');
+              background-color: transparent;
             }
           }
         }
 
         &.open {
-          width: 257px;
-          min-width: 257px;
+          width: 190px;
 
           .catalog-sorting-head {
             color: rgb(0, 0, 0);
             border-radius: 5px 5px 0 0;
-            background: rgb(235, 235, 235);
+            background: rgb(185, 213, 253);
             padding-right: 23px;
             box-sizing: border-box;
           }

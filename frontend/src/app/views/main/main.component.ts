@@ -110,8 +110,9 @@ export class MainComponent implements OnInit {
   }
 //Вернуться в проект im в ордер компонетнт посмотреть реализацию модалки и передачи в гет запрос параметров
 
-  getOrder() {
+  getOrder(value: string) {
     this.form.get('type')?.setValue('order')
+    this.form.get('service')?.setValue(value)
     this.dialogRef = this.dialog.open(this.popup);
   }
 

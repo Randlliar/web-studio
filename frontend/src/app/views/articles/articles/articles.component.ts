@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostBinding, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../core/auth/auth.service";
 import {ArticleService} from "../../../shared/services/article.service";
@@ -7,8 +7,9 @@ import {environment} from "../../../../environments/environment";
 import {CategoriesService} from "../../../shared/services/categories.service";
 import {CategoriesType} from "../../../../types/categories.type";
 import {ActiveParamsType} from "../../../../types/activeParams.type";
-import {debounceTime} from "rxjs";
+import {debounceTime, generate} from "rxjs";
 import {FormControl} from "@angular/forms";
+import {AppliedFilterType} from "../../../../types/applied-filters.type";
 
 @Component({
   selector: 'app-articles',
@@ -17,15 +18,19 @@ import {FormControl} from "@angular/forms";
 })
 export class ArticlesComponent implements OnInit {
 
+
+
   articlesPage!: ArticlePageType;
-  activeParams: ActiveParamsType = {categories: [], page: 1};
+  activeParams: ActiveParamsType = {page: 1, categories: []};
 
   serverStaticPath = environment.serverStaticPath;
   pages: number[] = [];
   categories: CategoriesType[] = [];
   categoriesController: FormControl = new FormControl<string[]>([]);
   sortingOpen = false;
+  appliedFilters: AppliedFilterType[] = [];
 
+@ViewChild('selector') selector!: ElementRef;
 
   constructor(private articleService: ArticleService,
               private categoriesService: CategoriesService,
@@ -37,28 +42,21 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.processContent();
-
-    this.filter();
-
+    this.getFilterCategories();
     this.subscribeToCategoriesChanges();
+
   }
+
 
   get selectedCategories(): string[] {
     return this.categoriesController.value;
   }
+
   subscribeToCategoriesChanges() {
     this.categoriesController.valueChanges.subscribe((data: string[]) => {
       this.activeParams.categories = data;
-
       this.processContent();
     })
-  }
-
-  filter() {
-    this.categoriesService.getCategories()
-      .subscribe(data => {
-        this.categories = data;
-      })
   }
 
   processContent() {
@@ -74,6 +72,55 @@ export class ArticlesComponent implements OnInit {
       })
   }
 
+  getFilterCategories() {
+    this.categoriesService.getCategories()
+      .subscribe(data => {
+        this.categories = data;
+      })
+  }
+
+  delete(value: string) {
+    if (this.activeParams.categories.includes(value)) {
+      this.activeParams.categories = this.activeParams.categories.filter(category => category !== value);
+    }
+    const index = this.appliedFilters.findIndex(url => url.urlParam === value);
+    if (index !== -1) {
+      this.appliedFilters.splice(index, 1);
+    }
+    this.router.navigate(['/articles'], {
+      queryParams: this.activeParams
+    });
+    this.activeParams.page = 1;
+  }
+
+  sort(value: string) {
+    if (this.activeParams.categories.includes(value)) {
+      this.activeParams.categories = this.activeParams.categories.filter(category => category !== value);
+    } else {
+      this.activeParams.categories.push(value);
+    }
+
+    this.categories.map(item => {
+      if (item.url === value) {
+        if (this.activeParams.categories.includes(value)) {
+          this.appliedFilters.push({
+            name: item.name,
+            urlParam: item.url
+          })
+        } else {
+          const index = this.appliedFilters.findIndex(url => url.urlParam === value);
+          if (index !== -1) {
+            this.appliedFilters.splice(index, 1);
+          }
+        }
+      }
+    })
+
+    this.activeParams.page = 1;
+    this.router.navigate(['/articles'], {
+      queryParams: this.activeParams
+    });
+  }
 
   getArticles() {
     this.articleService.getArticles(this.activeParams)
@@ -86,6 +133,7 @@ export class ArticlesComponent implements OnInit {
         }
       })
   }
+
 
   openPage(page: number) {
     this.activeParams.page = page;
@@ -113,7 +161,21 @@ export class ArticlesComponent implements OnInit {
   }
 
   toggleSorting() {
-    this.sortingOpen = !this.sortingOpen;
+   if (this.sortingOpen) {
+     this.sortingOpen = false;
+   } else {
+     this.sortingOpen = true;
+     this.selector.nativeElement.focus();
+   debugger;
+   }
   }
 
+  open() {
+    this.sortingOpen = true;
+
+  }
+
+  close() {
+    this.sortingOpen = false;
+  }
 }
