@@ -19,6 +19,10 @@ export class CommentsService {
     return this.http.get<CommentCountType>(`${environment.api}comments?offset=${offset}&article=${id}`);
   }
 
+  getActionForComments(id: string): Observable<ArticleCommentsActionType> {
+    return this.http.get<ArticleCommentsActionType>(`${environment.api}comments/${id}/actions`);
+  }
+
   getArticlesCommentsAction(articleId: string): Observable<ArticleCommentsActionType[]> {
     return this.http.get<ArticleCommentsActionType[]>(`${environment.api}comments/article-comment-actions`, {
       params: {

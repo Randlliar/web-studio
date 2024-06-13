@@ -3,14 +3,13 @@ import {ArticleService} from "../services/article.service";
 import {ArticleType} from "../../../types/article.type";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
-import {PopularArticlesType} from "../../../types/popular-articles.type";
 import {ArticlesType} from "../../../types/articles.type";
-import * as url from "url";
 import {CommentsService} from "../services/comments.service";
 import {CommentCountType, CommentType} from "../../../types/comments.type";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../core/auth/auth.service";
 import {ArticleCommentsActionType} from "../../../types/article-comments-action.type";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-article',
@@ -23,17 +22,18 @@ export class ArticleComponent implements OnInit {
   article!: ArticleType;
   serverStaticPath = environment.serverStaticPath;
   articles: ArticlesType[] = [];
-  comments!: CommentType[];
-  allComments!: number;
+  allCommentsLength: number = 0;
+  allComments: CommentType[] = [];
   sliceComm!: CommentType[];
   comment: string = '';
+  commAction!: ArticleCommentsActionType;
 
   constructor(private articleService: ArticleService,
               private commentsService: CommentsService,
               private activatedRoute: ActivatedRoute,
               private authService: AuthService,
               private _snackBar: MatSnackBar,
-              private router: Router,
+              private http: HttpClient,
               private changedDetector: ChangeDetectorRef) {
     this.isLogged = this.authService.getIsLoggedIn();
 
@@ -49,31 +49,82 @@ export class ArticleComponent implements OnInit {
   addAction(comment: CommentType, action: string) {
     if (this.isLogged) {
     this.commentsService.addReaction(comment.id, action)
-      .subscribe(data => {
-        this.getArticlesCommentsAction();
-        this._snackBar.open('Ваш голос учтен');
+      .subscribe({
+      next: (data: CommentCountType) => {
+        if (action === 'violate') {
+          this._snackBar.open('Ваша жалоба отправлена');
+        } else {
+         // this.getComments(0)
+         this.getActionForComments(comment.id);
+          // this.getArticlesCommentsAction();
+          this._snackBar.open('Ваш голос учтен');
+        }
+      },
+        error: (error: HttpErrorResponse) => {
+          this._snackBar.open(error.error.message);
+          throw new Error(error.error.message)
+        }
       });
     } else {
       this._snackBar.open('Для оценки вам нужно зарегистрировться');
     }
   }
 
-
   addMore() {
-    const slice = this.sliceComm.slice(0,5);
-    this.sliceComm = this.sliceComm.slice(6, this.sliceComm.length)
-    this.comments = this.comments.concat(slice);
+    if (this.allComments.length < 10){
+      this.getComments(0)
+      console.log(
+        this.allComments.length
+
+      )
+    } else if (this.allComments.length % 10 === 0){
+      this.getComments(this.allComments.length)
+      console.log(
+        this.allComments.length
+
+      )
+    } else {
+      this.getComments(this.allComments.length % 10)
+    }
+    console.log(this.allComments.length)
+
   }
 
-  getComments() {
-    this.commentsService.getComments(3, this.article.id)
+  get3Comm(offset: number) {
+    this.commentsService.getComments(offset, this.article.id)
       .subscribe((data: CommentCountType) => {
-        let asd = data.allCount
-        this.allComments = data.comments.length;
-        this.sliceComm = data.comments;
-        console.log(data)
+        this.allComments = data.comments.slice(0,3);
+      })
+  }
+  getComments(offset: number) {
+    this.commentsService.getComments(offset, this.article.id)
+      .subscribe((data: CommentCountType) => {
+        if (data.allCount) {
+          this.allCommentsLength = data.allCount;
+        }
+        if (this.allComments.length < 3) {
+          this.allComments = data.comments.slice(0,3);
+          this.getArticlesCommentsAction();
+        }
+         else if (this.allComments.length< 10) {
+          this.allComments = data.comments;
+          this.getArticlesCommentsAction();
+        } else {
+          this.allComments = this.allComments.concat(data.comments)
+          this.getArticlesCommentsAction();
+        }
 
         this.getArticlesCommentsAction();
+        // console.log(this.allComments.length)
+
+      })
+  }
+
+  getActionForComments(id: string) {
+    this.commentsService.getActionForComments(id)
+      .subscribe(data => {
+        console.log(data)
+        return data;
       })
   }
 
@@ -83,13 +134,12 @@ export class ArticleComponent implements OnInit {
         .subscribe((data: ArticleCommentsActionType[]) => {
           data.forEach(item => {
             const commentId = item.comment;
-            const comment = this.comments.find(comment => {
-              console.log('comment.id' , comment.id)
-              console.log(commentId)
+            const comment = this.allComments.find(comment => {
               return comment.id === commentId;
             })
-            console.log(comment)
-            comment!.userAction = item.action;
+            if (comment) {
+              comment!.userAction = item.action;
+            }
           })
           this.changedDetector.detectChanges();
         })
@@ -103,12 +153,13 @@ export class ArticleComponent implements OnInit {
       })
   }
 
+
+
   getArticle(params: Params) {
     this.articleService.getArticle(params['url'])
       .subscribe((data: ArticleType) => {
         this.article = data;
-        this.comments = data.comments;
-        this.getComments();
+        this.getComments(0)
         this.getArticlesCommentsAction();
       })
   }
@@ -116,7 +167,7 @@ export class ArticleComponent implements OnInit {
   addComment() {
     this.commentsService.addComment(this.comment, this.article.id)
       .subscribe(data => {
-        this.getArticlesCommentsAction();
+        this.get3Comm(0);
         this._snackBar.open('Комментарий успешно добавлен!');
       })
   }

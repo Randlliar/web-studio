@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="add action for more comments">
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/applied-filters.type.ts" afterDir="false" />
+    <list default="true" id="ad7e5109-0f06-4554-a3af-354c82a7de58" name="Changes" comment="add action for filter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/article/article.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/articles/articles/articles.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/comments.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/comments.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/comments.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +139,8 @@
       <workItem from="1718190437461" duration="4751000" />
       <workItem from="1718198498647" duration="2189000" />
       <workItem from="1718206065640" duration="3585000" />
+      <workItem from="1718265050801" duration="5945000" />
+      <workItem from="1718291093114" duration="11939000" />
     </task>
     <task id="LOCAL-00001" summary="backend files">
       <option name="closed" value="true" />
@@ -261,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718008671251</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add action for filter">
+      <option name="closed" value="true" />
+      <created>1718265149729</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718265149729</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +302,7 @@
     <MESSAGE value="add like/dislike functional" />
     <MESSAGE value="edit like/dislike functional" />
     <MESSAGE value="add action for more comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add action for more comments" />
+    <MESSAGE value="add action for filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="add action for filter" />
   </component>
 </project>

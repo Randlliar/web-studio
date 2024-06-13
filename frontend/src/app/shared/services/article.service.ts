@@ -31,4 +31,6 @@ export class ArticleService {
   getRelatedArticle(url: string): Observable<ArticlesType[]> {
     return this.http.get<ArticleType[]>(`${environment.api}articles/related/${url}`);
   }
+
+
 }
