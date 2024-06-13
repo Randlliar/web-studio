@@ -175,7 +175,7 @@
         </div>
 
       </div>
-      <div class="comments-more" (click)="addMore()" *ngIf="allComments.length < allCommentsLength">
+      <div class="comments-more" (click)="loadMoreComments()" *ngIf="allComments.length < allCommentsLength">
       <span >
         Загрузить ещё комментарии
       </span>
