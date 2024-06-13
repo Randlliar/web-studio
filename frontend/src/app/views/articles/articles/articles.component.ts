@@ -161,13 +161,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   toggleSorting() {
-   if (this.sortingOpen) {
-     this.sortingOpen = false;
-   } else {
-     this.sortingOpen = true;
-     this.selector.nativeElement.focus();
-   debugger;
-   }
+     this.sortingOpen = !this.sortingOpen;
   }
 
   open() {

@@ -47,7 +47,7 @@ input {
   padding: 20px;
 }
 
-.carousel{
+.carousel {
   position: relative;
 }
 
@@ -58,9 +58,8 @@ input {
 }
 
 
-
-.owl-theme .owl-dots .owl-dot span{
-  border: 1px solid rgb(255, 255, 255) ;
+.owl-theme .owl-dots .owl-dot span {
+  border: 1px solid rgb(255, 255, 255);
   background: transparent;
   margin: 5px 12px;
 }
@@ -71,7 +70,7 @@ input {
 
 
 .owl-theme .owl-dots .owl-dot:hover span,
-.owl-theme .owl-dots .owl-dot.active:hover span{
+.owl-theme .owl-dots .owl-dot.active:hover span {
   background: rgba(255, 255, 255, 0.6);
 }
 
@@ -96,6 +95,7 @@ input {
 
   ol, ul {
     padding: 20px;
+
     li {
       color: rgb(7, 23, 57);
       font-family: Montserrat, sans-serif;
@@ -116,6 +116,11 @@ input {
   text-align: center;
   display: flex;
   flex-direction: column;
+
+
+  &.hide {
+    display: none;
+  }
 
   .popup-close {
     position: absolute;
@@ -168,5 +173,40 @@ input {
   form {
     display: flex;
     flex-direction: column;
+  }
+
+
+}
+
+.popup-success {
+  display: none;
+  padding: 100px 152px 86px;
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+
+  &.show {
+    display: flex;
+  }
+
+  .popup-success-title {
+    color: rgb(112, 159, 220);
+    font-family: Lora, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .popup-success-description {
+    color: rgb(30, 26, 43);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    padding: 10px 20px !important;
   }
 }

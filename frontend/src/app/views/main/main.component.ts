@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {FormControl, FormGroup} from "@angular/forms";
 import {RequestService} from "../../shared/services/request.service";
+import {HttpErrorResponse} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 // import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
@@ -79,6 +81,7 @@ export class MainComponent implements OnInit {
   articles: PopularArticlesType[] = [];
   categories: CategoriesType[] = [];
   serverStaticPath = environment.serverStaticPath;
+  success: boolean = false;
   dialogRef: MatDialogRef<any> | null = null;
   form = new FormGroup({
     name: new FormControl(),
@@ -91,6 +94,7 @@ export class MainComponent implements OnInit {
               private categoriesService: CategoriesService,
               private router: Router,
               private dialog: MatDialog,
+              private _snackBar: MatSnackBar,
               private requestService: RequestService
               ) { }
 
@@ -98,17 +102,13 @@ export class MainComponent implements OnInit {
     this.categoriesService.getCategories()
       .subscribe((data: CategoriesType[]) => {
         this.categories = data;
-        console.log(this.categories)
-
       })
 
     this.articleService.getPopularArticles()
       .subscribe((data: PopularArticlesType[]) => {
         this.articles = data;
       })
-
   }
-//Вернуться в проект im в ордер компонетнт посмотреть реализацию модалки и передачи в гет запрос параметров
 
   getOrder(value: string) {
     this.form.get('type')?.setValue('order')
@@ -118,11 +118,22 @@ export class MainComponent implements OnInit {
 
   getRequest() {
     const formData = this.form.getRawValue()
-    this.requestService.createRequest(formData).subscribe()
+    this.requestService.createRequest(formData)
+      .subscribe({
+        next: (data) => {
+          this.success = true;
+        },
+        error: (error: HttpErrorResponse) => {
+          this._snackBar.open("Произошла ошибка при отправке формы, попробуйте еще раз");
+          throw new Error(error.error.message)
+        }
+      })
   }
 
   closePopup() {
     this.dialogRef?.close();
-    this.router.navigate(['/']);
+    this.success = false;
+    this.form.get('name')?.setValue('');
+    this.form.get('phone')?.setValue('');
   }
 }

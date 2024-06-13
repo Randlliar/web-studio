@@ -62,8 +62,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserInfo() {
-    const asd = this.userInfoService.getUserInfo().subscribe();
-    console.log(asd)
+    this.userInfoService.getUserInfo().subscribe();
   }
 
 }

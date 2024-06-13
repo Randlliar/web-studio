@@ -42,7 +42,6 @@ export class SignupComponent implements OnInit {
             }
 
             const loginResponse = data as LoginResponseType;
-            console.log(data)
 
             if (!loginResponse.accessToken || !loginResponse.refreshToken || !loginResponse.userId) {
               error = 'Ошибка авторизации';

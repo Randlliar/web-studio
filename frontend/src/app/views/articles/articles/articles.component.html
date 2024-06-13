@@ -32,7 +32,7 @@
                 </svg>
               </a>
             </div>
-            <div #selector class="catalog-sorting-body" tabindex="0" (blur)="close()" appFocus>
+            <div #selector class="catalog-sorting-body" [class.open]="sortingOpen"  (click)="toggleSorting()">
               <div class="catalog-sorting-item" *ngFor="let category of categories"
                    [class.active]="this.activeParams.categories ? this.activeParams.categories.includes(category.url) : false"
                    (click)="sort(category.url)">

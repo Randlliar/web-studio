@@ -7,6 +7,7 @@ import {CategoriesType} from "../../../../types/categories.type";
 import {environment} from "../../../../environments/environment";
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-footer',
@@ -18,6 +19,7 @@ export class FooterComponent implements OnInit {
   @ViewChild('popup') popup!: TemplateRef<ElementRef>;
   articles: PopularArticlesType[] = [];
   categories: CategoriesType[] = [];
+  success: boolean = false;
   dialogRef: MatDialogRef<any> | null = null;
   form = new FormGroup({
     name: new FormControl(),
@@ -42,13 +44,23 @@ export class FooterComponent implements OnInit {
 
   getRequest() {
     const formData = this.form.getRawValue();
-    this.requestService.createRequest(formData).subscribe();
-    this._snackBar.open('Звонок заказан');
-    this.dialogRef?.close();
-  }
+    this.requestService.createRequest(formData)
+      .subscribe({
+        next: (data) => {
+          this.success = true;
+        },
+        error: (error: HttpErrorResponse) => {
+          this._snackBar.open("Произошла ошибка при отправке формы, попробуйте еще раз");
+          throw new Error(error.error.message)
+        }
+      })
+}
 
   closePopup() {
     this.dialogRef?.close();
+    this.success = false;
+    this.form.get('name')?.setValue('');
+    this.form.get('phone')?.setValue('');
     this.router.navigate(['/']);
   }
 }
