@@ -160,16 +160,17 @@ export class ArticlesComponent implements OnInit {
     }
   }
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent){
+    const catalogSorting = document.querySelector('.catalog-sorting');
+    if (catalogSorting && !catalogSorting.contains(event.target as Node)) {
+      this.sortingOpen = false;
+    }
+  }
+
   toggleSorting() {
      this.sortingOpen = !this.sortingOpen;
   }
 
-  open() {
-    this.sortingOpen = true;
 
-  }
-
-  close() {
-    this.sortingOpen = false;
-  }
 }

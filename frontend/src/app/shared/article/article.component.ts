@@ -36,7 +36,6 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLogged = this.authService.getIsLoggedIn();
-
     this.activatedRoute.params.subscribe(params => {
       this.loadArticleData(params);
       this.loadRelatedArticles(params);
@@ -77,7 +76,6 @@ export class ArticleComponent implements OnInit {
 
 
               this.getActionForComments(comment);
-              // this.getArticlesCommentsAction();
               this._snackBar.open('Ваш голос учтен');
             }
 
