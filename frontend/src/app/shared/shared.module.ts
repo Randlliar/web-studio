@@ -5,23 +5,28 @@ import {FormsModule} from "@angular/forms";
 import {ArticleCardComponent} from './article-card/article-card.component';
 import {ArticleComponent} from './article/article.component';
 import {ArticleFilterComponent} from './article-filter/article-filter.component';
+import { LoaderComponent } from './loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
   declarations: [
     ArticleCardComponent,
     ArticleComponent,
-    ArticleFilterComponent
+    ArticleFilterComponent,
+    LoaderComponent
   ],
   exports: [
     ArticleComponent,
     ArticleCardComponent,
-    ArticleFilterComponent
+    ArticleFilterComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule {
