@@ -7,6 +7,7 @@ import {ArticleComponent} from './article/article.component';
 import {ArticleFilterComponent} from './article-filter/article-filter.component';
 import { LoaderComponent } from './loader/loader.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { PoliticComponent } from './politic/politic.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     ArticleCardComponent,
     ArticleComponent,
     ArticleFilterComponent,
-    LoaderComponent
+    LoaderComponent,
+    PoliticComponent
   ],
   exports: [
     ArticleComponent,
